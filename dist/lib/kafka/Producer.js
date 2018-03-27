@@ -15,12 +15,12 @@ class Producer extends EventEmitter {
      */
     async connect() {
         try {
+            this.producer.on("error", this.handleError);
             await this.producer.connect();
         }
         catch (error) {
             this.handleError(error);
         }
-        this.producer.on("error", this.handleError);
     }
     /**
      * Produce a new message

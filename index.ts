@@ -36,9 +36,8 @@ const defaultOptions = {
   "workerPerPartition": 1,
 };
 
-export default async (options: ConfigInterface): Promise<Processor> => {
+export default (options: ConfigInterface): Processor => {
   const config: ConfigInterface = merge(defaultOptions, options);
-  const processor = new Processor(config);
-  await processor.start();
-  return processor;
+
+  return new Processor(config);
 };

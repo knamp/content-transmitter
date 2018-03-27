@@ -7,12 +7,16 @@ const Crawler_1 = require("./web/Crawler");
 class Processor extends EventEmitter {
     constructor(config) {
         super();
+        this.config = config;
         this.consumer = new Consumer_1.default(config, this.handleConsumerMessage.bind(this));
         this.producer = new Producer_1.default(config);
         this.crawler = new Crawler_1.default(config);
         this.consumer.on("error", this.handleError.bind(this));
         this.producer.on("error", this.handleError.bind(this));
         this.crawler.on("error", this.handleError.bind(this));
+    }
+    getConfig() {
+        return this.config;
     }
     async start() {
         await this.producer.connect();

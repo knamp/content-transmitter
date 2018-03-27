@@ -27,16 +27,15 @@ const defaultOptions = {
         ssl: false,
     },
     "produceFlushEveryMs": 1000,
+    "producerPartitionCount": 1,
     "queue.buffering.max.messages": 100000,
     "queue.buffering.max.ms": 1000,
     "retry.backoff.ms": 200,
     "socket.keepalive.enable": true,
     "workerPerPartition": 1,
 };
-exports.default = async (options) => {
+exports.default = (options) => {
     const config = lodash_1.merge(defaultOptions, options);
-    const processor = new Processor_1.default(config);
-    await processor.start();
-    return processor;
+    return new Processor_1.default(config);
 };
 //# sourceMappingURL=index.js.map
