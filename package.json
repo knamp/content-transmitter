@@ -23,7 +23,7 @@
     "crawler": "^1.1.2",
     "ejvm": "^1.0.0",
     "lodash": "^4.17.5",
-    "sinek": "^6.24.1"
+    "sinek": "^7.30.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.106",
