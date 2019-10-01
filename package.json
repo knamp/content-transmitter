@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@types/express": "^4.16.1",
-    "bluebird": "^3.5.1",
+    "bluebird": "^3.7.0",
     "crawler": "^1.1.2",
     "ejvm": "^1.0.0",
     "lodash": "^4.17.5",
